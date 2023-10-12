@@ -1,4 +1,10 @@
 # walton-backend-assessment
+## Environment setup
+1. clone the repo: https://github.com/Billal-Hossen/walton-backend-assessment
+2. Add . env like envsample file
+3. npm install 
+4. npm run dev
+
 ## Used Technology
 1. Nodejs
 2. Expresjs
