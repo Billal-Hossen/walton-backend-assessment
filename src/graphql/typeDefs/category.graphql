@@ -1,0 +1,49 @@
+scalar Date
+
+input AddCategoryType{
+    active: Boolean
+    name: String
+    parentId: String
+}
+
+input updateCategoryInputType{
+    categoryId: String
+    active: Boolean
+    name: String
+    parentId: String
+}
+
+input DeleteInputType {
+ categoryId: String
+}
+
+input CategoriedQueryDataType{
+    categoryId: String
+}
+type CategoryQuerySchema{
+    _id: String
+    name: String
+    parentId: String
+    active: Boolean
+    createdAt: Date
+    updatedAt: Date
+
+}
+
+type QueryCategory {
+    data : [CategoryQuerySchema]
+}
+
+ type Mutation {
+    addCategory(inputData: AddCategoryType): CategoryQuerySchema
+    updateCategory(inputData:updateCategoryInputType):String
+    deleteCategory(inputData:DeleteInputType):String
+    deactivateCategoryAndSub(inputData:DeleteInputType):String
+}
+
+
+ type Query {
+    categories(
+        queryData: CategoriedQueryDataType
+    ):QueryCategory
+}
